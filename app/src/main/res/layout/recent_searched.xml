@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#1E1E1E"
+    android:padding="8dp">
+
+    <!-- Título de la sección -->
+    <TextView
+        android:id="@+id/recent_search_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Búsquedas Recientes"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:padding="8dp" />
+
+    <!-- RecyclerView para mostrar búsquedas recientes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recentSearchesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"/>
+</LinearLayout>

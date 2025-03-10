@@ -1,4 +1,4 @@
-package harmonix.app
+package harmonix.app.model
 
 import retrofit2.Response
 import retrofit2.http.GET
@@ -10,6 +10,7 @@ interface YouTubeApi {
         @Query("part") part: String,
         @Query("q") query: String,
         @Query("key") apiKey: String,
-        @Query("type") type: String
+        @Query("type") type: String,
+        @Query("maxResults") maxResults: Int
     ): Response<SearchResponse>
 }

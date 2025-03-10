@@ -1,4 +1,4 @@
-package harmonix.app
+package harmonix.app.model
 
 data class VideoItem(
     val id: VideoId,

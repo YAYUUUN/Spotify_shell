@@ -68,4 +68,6 @@ dependencies {
     implementation(libs.glide)
     kapt(libs.compiler)
     implementation(libs.material)
+    implementation(libs.material.v190)
+    implementation(libs.androidx.constraintlayout.v214)
 }

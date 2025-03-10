@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">HarmoniX</string>
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="create_account">Create account</string>
+    <string name="username">Username</string>
+    <string name="enter_verification_code">Enter verification code</string>
+    <string name="enter_your_e_mail">Enter your E-mail</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="you_can_change_it_once_every_90_days">You can change it once every 90 days.</string>
+    <string name="you_will_need_to_verify_this_email_later">You will need to verify this email later.</string>
+    <string name="create_a_password">Create a password</string>
+    <string name="atleast_8_characters">Atleast 8 characters.</string>
+    <string name="next">Next</string>
+    <string name="create">Create</string>
+    <string name="minimum_char_error">Enter a valid password, minimum 8 characters</string>
+    <string name="resend">Resend</string>
+    <string name="check_your_email">Check your email.</string>
+    <string name="validate_you_e_mail">Validate you E-mail</string>
+    <string name="finish">Finish</string>
+    <string name="home">Home</string>
+    <string name="library">Library</string>
+    <string name="search">Search</string>
+    <string name="recently_played">Recently played</string>
+    <string name="your_Xyear_wrapped">Your 2021 in review</string>
+    <string name="editor_s_picks">Editor\'s picks</string>
+    <string name="your_top_genres">Your top genres</string>
+    <string name="more_genres">More genres</string>
+    <string name="trending_genres">Trending genres</string>
+    <string name="playlists">Playlists</string>
+    <string name="your_library">Your Library</string>
+    <string name="albums">Albums</string>
+    <string name="artists">Artists</string>
 </resources>

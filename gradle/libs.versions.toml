@@ -1,7 +1,10 @@
 [versions]
 agp = "8.8.0"
+constraintlayout = "2.2.1"
+constraintlayoutVersion = "2.1.4"
 converterGson = "2.9.0"
 glide = "4.15.1"
+googleMaterial = "1.9.0"
 kotlin = "2.0.0"
 coreKtx = "1.10.1"
 junit = "4.13.2"
@@ -11,10 +14,13 @@ lifecycleRuntimeKtx = "2.6.1"
 activityCompose = "1.10.0"
 composeBom = "2024.04.01"
 material = "1.12.0"
+materialVersion = "1.8.0"
 recyclerview = "1.4.0"
 appcompat = "1.7.0"
 
 [libraries]
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-constraintlayout-v214 = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayoutVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
@@ -35,6 +41,8 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
+material-v180 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+material-v190 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "converterGson" }
 
 [plugins]
