@@ -3,12 +3,12 @@ This project runs the shell (or the frontend) of an app just like Spotify using 
 
 The search part is using Youtube's API to do the search.
 
-![image](https://github.com/user-attachments/assets/998b3538-2e8d-44cd-8873-4f15ff79bcef)
-![image](https://github.com/user-attachments/assets/535870bb-0548-40d1-beb4-70232d0e64c8)
-![image](https://github.com/user-attachments/assets/1b5b08e0-7381-41a1-b1b0-9c8042c66069)
-![image](https://github.com/user-attachments/assets/5463f089-2aac-4ae2-8b88-8531bff65eb4)
-![image](https://github.com/user-attachments/assets/0c4b84c9-5f88-429c-900c-f96849be96a0)
-![image](https://github.com/user-attachments/assets/ee954db2-f784-435b-b143-0d8f884becd9)
-![image](https://github.com/user-attachments/assets/03533815-b6d1-424c-8c38-4d1a68a9c60d)
-![image](https://github.com/user-attachments/assets/35046128-5237-4078-9916-9903374b09fa)
-![image](https://github.com/user-attachments/assets/52e4741c-961a-4b0d-8882-f0821febee2d)
+![image](https://github.com/user-attachments/assets/90130623-16c4-4bb7-9be0-2a145dea7c82)
+![image](https://github.com/user-attachments/assets/3149f1c3-726b-423b-8452-6eeb35ae49e1)
+![image](https://github.com/user-attachments/assets/5d1d75b0-8cc5-496d-9a66-57f899656bd1)
+![image](https://github.com/user-attachments/assets/db3b0c59-6fad-47c9-a299-9986e3077fee)
+![image](https://github.com/user-attachments/assets/f32dd513-2a9a-48fe-b2fe-9802cd84afad)
+![image](https://github.com/user-attachments/assets/ef483365-6a5b-4706-94b3-b67bd3f60191)
+![image](https://github.com/user-attachments/assets/e60c888b-1a2d-4948-9219-c753d7a12a61)
+![image](https://github.com/user-attachments/assets/623454de-e543-4451-b9a6-53ab09be4307)
+![image](https://github.com/user-attachments/assets/60ebc5c6-76d4-49b0-8722-0fac39b0d04b)
