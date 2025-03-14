@@ -1,7 +1,9 @@
-SPOTIFY:
+**SPOTIFY:**
 This project runs the shell (or the frontend) of an app just like Spotify using **kotlin** and **xml** for the UI part.
 
 The search part is using Youtube's API to do the search.
+
+To run it, add the logotype and done! 
 
 ![image](https://github.com/user-attachments/assets/90130623-16c4-4bb7-9be0-2a145dea7c82)
 
