@@ -39,4 +39,14 @@
             android:textColor="#B3B3B3"
             android:textSize="14sp"/>
     </LinearLayout>
+
+    <!-- Botón de tres puntos para mostrar opciones -->
+    <ImageView
+        android:id="@+id/search_result_options"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/white"
+        android:src="@drawable/ic_more_vert"
+        android:contentDescription="More options"/>
 </LinearLayout>

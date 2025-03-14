@@ -27,6 +27,15 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -89,6 +98,134 @@
                     android:orientation="horizontal">
 
                     <!-- Tarjeta 1 de "Recently played" -->
+                    <LinearLayout
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="3dp"
+                        android:layout_marginRight="8dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/placeholder_album"
+                            android:clickable="true" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1(Remastered)"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+
+                    <!-- Tarjeta 2 de "Recently played" (ejemplo) -->
+                    <LinearLayout
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="3dp"
+                        android:layout_marginRight="8dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/placeholder_album"
+                            android:clickable="true" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="New Jeans"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+
+                    <!-- Tarjeta 3 de "Recently played" (ejemplo) -->
+                    <LinearLayout
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="3dp"
+                        android:layout_marginRight="8dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/placeholder_album"
+                            android:clickable="true" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="BTS"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+
+                    <!-- Tarjeta 3 de "Recently played" (ejemplo) -->
+                    <LinearLayout
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="3dp"
+                        android:layout_marginRight="8dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/placeholder_album"
+                            android:clickable="true" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lana Del Rey"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+
+                    <!-- TODO Agrega más tarjetas según necesites -->
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favourite Songs"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- para canciones favoritas -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/favouriteSongsContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:orientation="horizontal">
+
+                    <!-- Tarjeta 1 -->
                     <LinearLayout
                         android:layout_width="106dp"
                         android:layout_height="wrap_content"
@@ -336,7 +473,7 @@
                             android:layout_marginTop="4dp"/>
                     </LinearLayout>
 
-                    <!-- Ejemplo tarjeta 1 -->
+                    <!-- Ejemplo tarjeta 2 -->
                     <LinearLayout
                         android:layout_width="136dp"
                         android:layout_height="wrap_content"
@@ -360,7 +497,7 @@
                             android:layout_marginTop="4dp"/>
                     </LinearLayout>
 
-                    <!-- Ejemplo tarjeta 1 -->
+                    <!-- Ejemplo tarjeta 3 -->
                     <LinearLayout
                         android:layout_width="136dp"
                         android:layout_height="wrap_content"

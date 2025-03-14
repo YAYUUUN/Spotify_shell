@@ -2,8 +2,6 @@ package harmonix.app.view
 
 import harmonix.app.model.YouTubeRepository
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -44,6 +43,7 @@ class SearchFragment : Fragment() {
     }
 
     private fun setupSearchBehavior() {
+        // Mostrar/ocultar contenedores al enfocar el campo de búsqueda
         searchEditText.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
                 containerGenres.visibility = View.GONE
@@ -51,6 +51,8 @@ class SearchFragment : Fragment() {
             }
         }
 
+        /*
+        // Código anterior: Búsqueda automática mientras se escribe
         searchEditText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 val query = s.toString()
@@ -61,6 +63,22 @@ class SearchFragment : Fragment() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
+        */
+
+        // Nueva lógica: Búsqueda al presionar el botón de búsqueda del teclado
+        searchEditText.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == android.view.inputmethod.EditorInfo.IME_ACTION_SEARCH) {
+                val query = searchEditText.text.toString()
+                if (query.isNotEmpty()) {
+                    searchVideos(query)
+                } else {
+                    showToast("Ingresa un término de búsqueda")
+                }
+                true // Indica que la acción ha sido manejada
+            } else {
+                false
+            }
+        }
     }
 
     private fun searchVideos(query: String) {
@@ -68,6 +86,7 @@ class SearchFragment : Fragment() {
             showSearchResults(videos)
         }, onError = { error ->
             Log.e("SearchFragment", "Error searching videos: $error")
+            showToast("Error al buscar videos: $error")
         })
     }
 
@@ -76,11 +95,16 @@ class SearchFragment : Fragment() {
         containerSearch.removeAllViews()
         containerSearch.addView(resultsView)
 
-        // Ensure this is a RecyclerView in the layout file
         searchResultsRecyclerView = resultsView.findViewById(R.id.search_results_recycler_view)
         searchResultsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        resultsAdapter = SearchResultsAdapter(videos)
+        resultsAdapter = SearchResultsAdapter(videos) { video ->
+            showToast("Seleccionado: ${video.snippet.title}")
+        }
         searchResultsRecyclerView.adapter = resultsAdapter
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 }
 
@@ -92,9 +116,17 @@ class RecentSearchedAdapter(
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.recent_search_text)
+
         fun bind(query: String) {
             textView.text = query
-            itemView.setOnClickListener { onItemClick(query) }
+            itemView.setOnClickListener {
+                onItemClick(query)
+                showToast("Búsqueda reciente: $query")
+            }
+        }
+
+        private fun showToast(message: String) {
+            Toast.makeText(itemView.context, message, Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -111,13 +143,33 @@ class RecentSearchedAdapter(
     override fun getItemCount() = searches.size
 }
 
-class SearchResultsAdapter(private var results: List<VideoItem>) :
-    RecyclerView.Adapter<SearchResultsAdapter.ViewHolder>() {
+class SearchResultsAdapter(
+    private var results: List<VideoItem>,
+    private val onItemClick: (VideoItem) -> Unit
+) : RecyclerView.Adapter<SearchResultsAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView = view.findViewById(R.id.search_result_title)
         val channel: TextView = view.findViewById(R.id.search_result_channel)
         val thumbnail: ImageView = view.findViewById(R.id.search_result_thumbnail)
+
+        fun bind(video: VideoItem) {
+            title.text = video.snippet.title
+            channel.text = video.snippet.description
+
+            Glide.with(itemView.context)
+                .load(video.snippet.thumbnails.medium.url)
+                .into(thumbnail)
+
+            itemView.setOnClickListener {
+                onItemClick(video)
+                showToast("Seleccionado: ${video.snippet.title}")
+            }
+        }
+
+        private fun showToast(message: String) {
+            Toast.makeText(itemView.context, message, Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -127,13 +179,7 @@ class SearchResultsAdapter(private var results: List<VideoItem>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val video = results[position]
-        holder.title.text = video.snippet.title
-        holder.channel.text = video.snippet.description
-
-        Glide.with(holder.itemView.context)
-            .load(video.snippet.thumbnails.medium.url)
-            .into(holder.thumbnail)
+        holder.bind(results[position])
     }
 
     override fun getItemCount() = results.size

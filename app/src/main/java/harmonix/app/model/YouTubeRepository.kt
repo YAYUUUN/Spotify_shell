@@ -8,7 +8,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class YouTubeRepository {
 
-    private val apiKey = "AIzaSyCGktDigD5L3pyWfthua2zaU7vBVF6xKfY"
+    // TODO: your YOUTUBE API KEY
+    private val apiKey = "your API key"
     private val retrofit = Retrofit.Builder()
         .baseUrl("https://www.googleapis.com/youtube/v3/")
         .addConverterFactory(GsonConverterFactory.create())
